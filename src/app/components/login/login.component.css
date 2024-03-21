@@ -1,0 +1,16 @@
+.container-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-image: url("../../../assets/images/plantas.jpg");
+    background-size: cover;
+}
+
+.separed {
+    margin-bottom: 15px;
+}
+
+#floatingInput {
+    width: 250px;
+}

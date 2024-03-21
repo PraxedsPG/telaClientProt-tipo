@@ -1,0 +1,14 @@
+.container-centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.separed {
+    margin-bottom: 15px;
+}
+
+#floatingInput {
+    width: 250px;
+}
