@@ -6,7 +6,7 @@
 
 .bgcolor {
     background-color: rgb(161, 229, 161);
-    height: 70px; 
+    height: 70px;
 }
 
 section h1{
@@ -16,4 +16,8 @@ section h1{
 
 form {
     margin-bottom: 20px;
+}
+
+.btn-down {
+  margin-top: 10px;
 }

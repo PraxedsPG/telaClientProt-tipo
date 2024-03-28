@@ -1,6 +1,5 @@
+import { InsertClientComponent } from './insert-client.component'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { InsertClientComponent } from './insert-client.component';
 
 describe('InsertClientComponent', () => {
   let component: InsertClientComponent;
@@ -11,7 +10,7 @@ describe('InsertClientComponent', () => {
       imports: [InsertClientComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(InsertClientComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

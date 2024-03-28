@@ -5,6 +5,13 @@
     height: 90vh;
 }
 
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .separed {
     margin-bottom: 15px;
 }

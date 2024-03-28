@@ -1,28 +1,69 @@
 <section class="d-flex align-items-center py-4 bg-body-light h-100">
-    <div class="w-50 m-auto form-container container-centered">
-         <form>
-            <div>
-                <img ngSrc="/assets/images/gardener.png"  class="form-control border-0 mb-3" height="300" width="40">
-            </div>
-            <div class="form-floating separed">
-                <input type="text" class="form-control" id="floatingInput">
-                <label for="floatingInput">Seu Nome</label>
-            </div>
-            <div class="form-floating separed">
-                <input type="email" class="form-control" id="floatingInput">
-                <label for="floatingInput">Seu email</label>
-            </div>
-            <div class="form-floating  separed">
-                <input type="number" class="form-control" id="floatingInput">
-                <label for="floatingInput">Seu telefone</label>
-            </div>
-            <div class="form-floating  separed">
-                <input type="cpf" class="form-control" id="floatingInput">
-                <label for="floatingInput">Seu CPF</label>
-            </div>
-             <button class="btn btn-success w-100 py-2 separed" (click)="goToMain()">Cadastrar</button>
-             <button class="btn btn-danger w-100 py-2" (click)="goToMain()">Cancelar</button>
-         </form>
-    </div>
- </section>
+  <div class="w-50 m-auto form-container container-centered">
+      @if(form) {
+        <form  [formGroup]="form" (ngSubmit)="save()">
+          <h1 class="text-center px-6 py-2">
+            @if(client) {
+              Atualizar
+            } @else {
+              Cadastrar
+            } Cliente
+          </h1>
+          <div>
+            <img ngSrc="/assets/images/gardener.png"  class="form-control border-0 mb-3" height="300" width="40">
+          </div>
+          <div class="form-floating separed">
+            <input type="text"  formControlName="name" class="form-control" id="floatingInput" maxlength="100" minlength="10">
+            <label for="floatingInput">Seu Nome</label>
 
+            @if(form.get('name')?.hasError('required') && form.get('name')?.touched) {
+              <p class="invalid-feedback d-block">* O nome é obrigatório</p>
+            }
+          </div>
+          <div class="form-floating separed ">
+            <input type="email"  formControlName="email" class="form-control" id="floatingInput" maxlength="30" minlength="10">
+            <label for="floatingIdnput">Seu email</label>
+
+            @if(form.get('email')?.hasError('required') && form.get('email')?.touched) {
+              <p class="invalid-feedback d-block">* O email é obrigatório</p>
+            }
+
+            @if(form.get('email')?.hasError('required') && form.get('email')?.touched) {
+              <p class="invalid-feedback d-block">* O email é inválido</p>
+            }
+          </div>
+          <div class="form-floating separed">
+            <input type="number"  formControlName="cel" class="form-control" id="floatingInput"  required maxlength="11" minlength="11">
+            <label for="floatingInput">Seu telefone</label>
+
+            @if(form.get('cel')?.hasError('required') && form.get('cel')?.touched) {
+              <p class="invalid-feedback d-block"> * O telefone é obrigatório</p>
+             }
+          </div>
+          <div class="form-floating separed">
+            <input type="cpf"  formControlName="cpf" class="form-control" id="floatingInput"  required maxlength="11" minlength="11">
+            <label for="floatingInput">Seu CPF</label>
+
+            @if(form.get('cpf')?.hasError('required') && form.get('cpf')?.touched) {
+              <p class="invalid-feedback d-block"> * O cpf é obrigatório</p>
+             }
+          </div>
+          <div class="form-floating separed">
+            <input type="registryUser"  formControlName="registryUser" class="form-control" id="floatingInput" required maxlength="8" minlength="4">
+            <label for="floatingInput">Tipo de Usuário</label>
+
+            @if(form.get('registryUser')?.hasError('required') && form.get('registryUser')?.touched) {
+              <p class="invalid-feedback d-block"> * O tipo de usuário é obrigatório</p>
+             }
+          </div>
+            <button type="submit" class="btn btn-outline-success centered">
+              @if(client) {
+                Atualizar
+              } @else {
+                Cadastrar
+              } Cliente
+            </button>
+        </form>
+        }
+  </div>
+</section>

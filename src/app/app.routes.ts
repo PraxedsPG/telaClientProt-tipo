@@ -19,15 +19,10 @@ export const routes: Routes = [
     },
     {
         path: 'main', component: HomeComponent
+    },
+    {
+      path: 'search/:id/upgrade', component: InsertClientComponent
     }
-
 ];
-
-
-@NgModule({
-    declarations: [],
-    imports: [RouterModule.forRoot(routes), CommonModule],
-    exports: [RouterModule]
-})
 
 export class AppModule { }
