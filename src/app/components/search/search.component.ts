@@ -38,10 +38,14 @@ export class SearchComponent implements OnInit {
     }
 
     deleteClient(client: Client) {
-      this.clientService.delete(client.id)
-      .subscribe(() => {
-        this.loadAll();
-      });
-      alert("Usuário excluído com sucesso!");
+      if(confirm('Deseja realmente deletar esse cliente?')) {
+        this.clientService.delete(client.id)
+        .subscribe(() => {
+          this.loadAll();
+        });
+        alert('Usuário excluído com sucesso!');
+      } else {
+        alert('Deleção cancelada');
+      }
     }
 }

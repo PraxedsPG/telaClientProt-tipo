@@ -18,10 +18,10 @@ export class InsertClientComponent implements OnInit {
 
 
 
-  private formB = inject(FormBuilder);
-  private router = inject(Router);
-  private route = inject(ActivatedRoute);
-  private clientService = inject(ClientService);
+    private formB = inject(FormBuilder);
+    private router = inject(Router);
+    private route = inject(ActivatedRoute);
+    private clientService = inject(ClientService);
 
 
 
@@ -52,7 +52,7 @@ export class InsertClientComponent implements OnInit {
       registryUser: ['', [Validators.required]],
     });
    }
-}
+  }
 
   save() {
     if (this.form?.invalid) {
